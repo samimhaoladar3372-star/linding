@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetPalace - Modern Pet Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo-mark">🐾</div>
+        <div>
+          <strong>PetPalace</strong>
+          <span>Pet Store</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#pet-food" class="nav-link">Pet Food</a>
+        <a href="#toys" class="nav-link">Toys</a>
+        <a href="#cages" class="nav-link">Cage</a>
+        <a href="#clothes" class="nav-link">Pet Clothes</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="cartBtn" aria-label="Open cart">
+          <span class="icon">🛒</span>
+        </button>
+        <button class="icon-btn" aria-label="User profile">
+          <span class="icon">👤</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section" id="home">
+        <div class="hero-copy">
+          <span class="eyebrow">Cute Pets, Happy Homes</span>
+          <h1>Find The Best For Your Pets</h1>
+          <p>Everything your furry friends need in one playful, modern store. From food to toys and cozy clothes — we make pet care simple.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary" id="shopNowBtn">Shop Now</button>
+            <button class="btn btn-secondary" id="exploreBtn">Explore</button>
+          </div>
+          <div class="hero-search">
+            <input id="searchInput" type="search" placeholder="Search pets, food, toys...">
+            <button class="btn btn-search">Search</button>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Cute dog and cat" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <section class="category-section" aria-label="Shop categories">
+        <h2>Shop by Category</h2>
+        <div class="category-grid">
+          <button class="category-card" data-target="pet-food">Pet Food</button>
+          <button class="category-card" data-target="toys">Toys</button>
+          <button class="category-card" data-target="cages">Cage</button>
+          <button class="category-card" data-target="clothes">Pet Clothes</button>
+        </div>
+      </section>
+
+      <section class="products-section" id="pet-food">
+        <div class="section-heading">
+          <span>Featured</span>
+          <h3>Pet Food</h3>
+        </div>
+        <div class="product-grid" id="foodGrid"></div>
+      </section>
+
+      <section class="products-section" id="toys">
+        <div class="section-heading">
+          <span>Happy Play</span>
+          <h3>Toys</h3>
+        </div>
+        <div class="product-grid" id="toysGrid"></div>
+      </section>
+
+      <section class="products-section" id="cages">
+        <div class="section-heading">
+          <span>Safe Spaces</span>
+          <h3>Cages</h3>
+        </div>
+        <div class="product-grid" id="cagesGrid"></div>
+      </section>
+
+      <section class="products-section" id="clothes">
+        <div class="section-heading">
+          <span>Pet Fashion</span>
+          <h3>Pet Clothes</h3>
+        </div>
+        <div class="product-grid" id="clothesGrid"></div>
+      </section>
+
+      <section class="feature-banner">
+        <div>
+          <h3>Free shipping on orders over $80</h3>
+          <p>Fast delivery, premium quality pet care products, and friendly customer support.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div>
+          <h2>Let's help your pets feel loved.</h2>
+          <p>Reach out for product advice, order support, or a friendly pet care tip.</p>
+          <a class="btn btn-primary" href="mailto:hello@petpalace.shop">Email Us</a>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <strong>Phone</strong>
+            <p>+880 1234 567890</p>
+          </div>
+          <div class="contact-card">
+            <strong>Hours</strong>
+            <p>Mon - Sat, 9:00 AM - 6:00 PM</p>
+          </div>
+          <div class="contact-card">
+            <strong>Location</strong>
+            <p>Dhaka, Bangladesh</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>PetPalace</strong>
+        <p>Cute and curated pet essentials for modern pet parents.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#pet-food">Pet Food</a>
+        <a href="#toys">Toys</a>
+      </div>
+      <div class="social-links">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="page-panel hidden" id="productPanel">
+    <div class="panel-card">
+      <button class="panel-close" id="closeProduct">×</button>
+      <div class="product-detail">
+        <img id="detailImage" src="" alt="Product image">
+        <div class="product-info">
+          <span class="detail-category" id="detailCategory"></span>
+          <h2 id="detailTitle"></h2>
+          <p id="detailDescription"></p>
+          <div class="price-row">
+            <span class="price-tag" id="detailPrice"></span>
+            <button class="btn btn-primary" id="buyNowBtn">Buy Now</button>
+          </div>
+          <div class="contact-box">
+            <h4>Contact</h4>
+            <p><strong>Email:</strong> hello@petpalace.shop</p>
+            <p><strong>Phone:</strong> +880 1234 567890</p>
+          </div>
+          <div class="map-frame">
+            <iframe src="https://maps.google.com/maps?q=pet%20store&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-panel hidden" id="checkoutPanel">
+    <div class="panel-card checkout-card">
+      <button class="panel-close" id="closeCheckout">×</button>
+      <div class="checkout-detail">
+        <div>
+          <h2>Checkout</h2>
+          <p>Complete your order with a payment method that fits your convenience.</p>
+        </div>
+        <div class="payment-options">
+          <label><input type="radio" name="payment" value="bKash" checked> bKash</label>
+          <label><input type="radio" name="payment" value="Nagad"> Nagad</label>
+          <label><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</label>
+        </div>
+        <div class="order-summary">
+          <h3>Order summary</h3>
+          <div class="summary-row">
+            <span id="summaryTitle">Product name</span>
+            <strong id="summaryPrice">$0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Delivery</span>
+            <strong>$5.99</strong>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <strong id="summaryTotal">$0.00</strong>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" id="confirmOrderBtn">Confirm Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
